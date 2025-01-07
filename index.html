@@ -1,0 +1,87 @@
+
+<html>
+  <head>
+      <title>Addition App by Kamal sir</title>
+      <style>
+        *{font-size:50px;font-family:cambria;}   
+         body{background-color:linen;}
+      </style>
+  </head>
+  <body>
+  <center>
+      <h1>Even Odd App by kamal sir</h1>
+      <form onsubmit="Check()">
+          <input type="number"   placeholder="enter integer number"   id="num"/>
+          <br></br>
+
+          <input type="submit"    value="M1"/>         
+          <input type="submit"    value="M2"/>         
+          <input type="submit"    value="M3"/>         
+     </form>
+      <h2 id="msg"/>
+   </center>
+
+   <script>
+      function Check()
+      {
+         event.preventDefault();
+         let num=document.getElementById("num");
+         let msg=document.getElementById("msg");
+         let action=document.activeElement.value;
+         let ans="";
+
+         if(num.value==="")
+         {
+
+              alert("please enter number");
+              msg.innerHTML="";
+              num.focus();
+              return; 
+         }
+         
+                   
+          let n=parseFloat(num.value); 
+         if(action==="M1")
+         {
+
+              ans=n%2===0? "even":"odd";
+              msg.innerHTML="M1-->"+ans;
+         }
+         else if(action==="M2")
+         {
+               if(n%2===0)
+                   ans="even";
+               else
+                   ans="odd";
+           msg.innerHTML="M2-->"+ans;
+          }
+        else if(action==="M3")
+          {
+ 
+            switch(n%2)
+            {
+
+   case 0 :     ans="even";   break;     
+   case 1 :     ans="odd";   break;     
+   case -1 :     ans="odd";   break;     
+
+            }
+  
+         msg.innerHTML="M3-->"+ans;
+         }
+     
+      }
+
+    </script>
+
+   
+  </body>
+</html>
+
+
+
+
+
+
+
+
